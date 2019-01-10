@@ -108,3 +108,54 @@ body * {
     width: 70%;
     background-color: rgb(211, 209, 209);
   }
+  .Item {
+    display: inline-block;
+    float: left;
+    width: 280px;
+    height: 300px;
+    padding: 10px;
+  }
+    .item-Pic {
+      display: inline-block;
+      width: 260px;
+      height: 280px;
+    }
+      .item-Opacity {
+        display: none;
+      }
+      .Item:hover .item-Opacity {
+        position: absolute;
+        z-index: 1;
+        display: inline-block;
+        width: 260px;
+        height: 280px;
+        background-color: white;
+        opacity: 0.7;
+      }
+      .item {
+        display: none;
+      }
+      .Item:hover .item{
+        display: inline-block;
+        position: absolute;
+        color: white;
+        z-index: 2;
+      }
+      .more-Btn {
+        position: absolute;
+        background-color: rgb(71, 75, 71);
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bolder;
+        width: 260px;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        bottom: -280px;
+      }
+
+      .more-Btn:hover {
+        background-color: #3e8e41;
+        cursor: pointer;
+      }

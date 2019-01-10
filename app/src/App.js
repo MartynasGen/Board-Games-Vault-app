@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import './font awesome/css/font-awesome.min.css'
-import Logo from './img/Logo.png'
-import Search from './components/Search'
-import Drop from './components/Drop-down'
-import Item from './components/Item'
+import './font awesome/css/font-awesome.min.css';
+import Logo from './img/Logo.png';
+import Search from './components/Search';
+import Drop from './components/Drop-down';
+import Item from './components/Item';
 
 
 class App extends Component {
