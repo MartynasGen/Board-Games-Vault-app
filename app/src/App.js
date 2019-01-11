@@ -5,6 +5,7 @@ import Logo from './img/Logo.png';
 import Search from './components/Search';
 import Drop from './components/Drop-down';
 import Item from './components/Item';
+import AddBtn from './components/AddButton';
 
 
 class App extends Component {
@@ -17,10 +18,10 @@ class App extends Component {
               <img src={Logo} alt='Board games'/>
               <Search/>
               <Drop/>
+              <AddBtn/>
           </div>
           <div className='right-Side'>
             <Item/>
-
           </div>
         </div>
       </div>

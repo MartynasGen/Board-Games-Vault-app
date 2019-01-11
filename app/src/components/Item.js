@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionTypes from '../store/actions/actionTypes'
 import ItemDetails from './ItemDetails'
+import AddNewItem from './AddNewItem'
 
 
 class Item extends Component {
@@ -21,7 +22,7 @@ class Item extends Component {
 
         let game = null
 
-        if (this.props.inspectItem === false) {
+        if (this.props.inspectItem === 'viewAll') {
             game = (
                 <div>
                     {this.props.item.map((element, index) => {
@@ -38,8 +39,10 @@ class Item extends Component {
                     })}
                 </div>
             )
-                } else {
+                } else if (this.props.inspectItem === 'viewOne'){
                     return <ItemDetails/>
+                } else if (this.props.inspectItem === 'addItem'){
+                    return <AddNewItem/>
                 }
 
         return (

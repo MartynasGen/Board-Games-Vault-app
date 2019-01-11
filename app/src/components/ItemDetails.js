@@ -7,20 +7,18 @@ class ItemDetails extends Component {
         let viewDetails = null
 
         viewDetails = (
-            <div>
-                <div>
-                    {this.props.tempItem.pic}
-                </div>
-                <div>
+            <div className='viewDetails'> 
+                <img  className='detailsPic' src={this.props.tempItem.pic} alt={this.props.tempItem.name}></img>
+                <h1>
                     {this.props.tempItem.name}
+                </h1>
+                <div>
+                    Category: {this.props.tempItem.category}
                 </div>
                 <div>
-                    {this.props.tempItem.details}
+                    Details: {this.props.tempItem.details}
                 </div>
-                <div>
-                    {this.props.tempItem.category}
-                </div>
-                <button onClick={this.props.getAllItems}>Back</button>
+                <button className='drop-Btn' onClick={this.props.getAllItems}>Back</button>
 
             </div>
         )

@@ -45,10 +45,17 @@ body * {
         border-radius: 25px;
         outline: none;
       }
+        .search-Input:hover {
+          border-color: #3e8e41;
+        }
         .left-Side > div > i {
           font-size: 50px;
           margin-left: 5px;
           color: rgb(71, 75, 71);
+        }
+        .left-Side > div > i:hover {
+          cursor: pointer;
+          color: #3e8e41;
         }
 
         .drop-Btn {
@@ -62,6 +69,7 @@ body * {
           font-size: 16px;
           border: none;
           outline: none;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         }
     
         .dropdown-Container {
@@ -94,11 +102,31 @@ body * {
       
               .dropdown-Container:hover .dropdown-Content {
                 display: block;
+                cursor: pointer;
               }
       
               .dropdown-Container:hover .drop-Btn {
                 background-color: #3e8e41;
+                cursor: pointer;
               }
+      .add-Item-Btn {
+        background-color: rgb(71, 75, 71);
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bolder;
+        letter-spacing: 2px;
+        width: 95%;
+        padding: 16px;
+        margin-top: 20px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      }
+        .add-Item-Btn:hover {
+          background-color: #3e8e41;
+          cursor: pointer;
+        }
 
 /*********************************************************************RIGTH SIDE*************************************************************************/
 
@@ -106,7 +134,7 @@ body * {
     display: inline-block;
     padding-top: 50px;
     width: 70%;
-    background-color: rgb(211, 209, 209);
+    /* background-color: rgb(211, 209, 209); */
   }
   .Item {
     display: inline-block;
@@ -114,6 +142,7 @@ body * {
     width: 280px;
     height: 300px;
     padding: 10px;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
   }
     .item-Pic {
       display: inline-block;
@@ -153,9 +182,45 @@ body * {
         border: none;
         outline: none;
         bottom: -280px;
+        cursor: pointer;
       }
 
       .more-Btn:hover {
         background-color: #3e8e41;
         cursor: pointer;
       }
+      .viewDetails {
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+      }
+/****************************************************************************DETAILS ABOUT ITEM*************************************************************/
+.detailsPic {
+  display: inline-block;
+  width: 500px;
+  height: 500px;
+}
+.drop-Btn:hover {
+  cursor: pointer;
+  background-color: #3e8e41;
+}
+/****************************************************************************ADD ITEM*************************************************************/
+.add-Btn {
+  background-color: rgb(71, 75, 71);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    width: 25%;
+    padding: 16px;
+    margin: 20px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+    .add-Btn:hover {
+      background-color: #3e8e41;
+      cursor: pointer;
+    }
+.editAddItem {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+}

@@ -2,13 +2,8 @@ import * as actionType from './actions/actionTypes'
 
 const initialState = {
     items: [],
-    tempItem: {
-        name: '',
-        pic: '',
-        details: '',
-        category: ''
-    },
-    inspectItem: false
+    tempItem: [],
+    inspectItem: 'viewAll'
 }
 
 const reducer = (state = initialState, action) => {
@@ -18,13 +13,18 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 items: action.items,
-                inspectItem: action.inspectItem
+                inspectItem: action.componentView
             };
         case actionType.INSPECT_ITEM:
             return {
                 ...state,
                 tempItem: action.tempItem,
-                inspectItem: true
+                inspectItem: action.componentView
+            }
+        case actionType.ADD_ITEM_VIEW:
+            return {
+                ...state,
+                inspectItem: action.componentView
             }
          default:   
     }
