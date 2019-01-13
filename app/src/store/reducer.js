@@ -34,10 +34,6 @@ const reducer = (state = initialState, action) => {
                 nDtl: action.dtl,
                 nPic: action.pic,
             }
-        // case action.INSERT_NEW_DATA:
-        //     return {
-
-        //     }
          default:   
     }
     

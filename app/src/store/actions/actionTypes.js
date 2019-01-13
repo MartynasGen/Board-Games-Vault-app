@@ -3,7 +3,6 @@ export const WAIT_ALL_ITEMS = 'WAIT_ALL_ITEMS';
 export const INSPECT_ITEM = 'INSPECT_ITEM';
 export const ADD_ITEM_VIEW = 'ADD_ITEM_VIEW';
 export const GET_ADD_ITEM = 'GET_ADD_ITEM';
-export const INSERT_NEW_DATA = 'INSERT_NEW_DATA'
 
 
 export const get_All_Items =(items) =>{
@@ -58,10 +57,10 @@ export const insert_new_data_wait = (obj) => {
         })
     }
 }
-
-// export const insert_new_data =(items) =>{
-//     return {
-//         type: INSERT_NEW_DATA,
-//         items: items,
-//     }
-// }
+export const delete_item = (value) => {
+    return dispatch => {
+        fetch(`http://localhost:2000/deleteValue/${value}`, {
+            method: 'DELETE',
+        })
+    }
+}

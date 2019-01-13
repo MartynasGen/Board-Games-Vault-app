@@ -16,6 +16,10 @@ class Item extends Component {
         let value = this.props.item[itemIndex]
         this.props.openItem(value)
     }
+
+    itemDelete = (id) => {
+        this.props.delItem(id)
+    }
     
 
     render(){
@@ -25,11 +29,12 @@ class Item extends Component {
         if (this.props.inspectItem === 'viewAll') {
             game = (
                 <div>
-                    {this.props.item.map((element, index) => {
+                    {this.props.item.map((element, index, _id) => {
                         return (
                             <div key={index} className='Item'>
                                 <div className='item-Opacity'></div>
                                 <div className='item'>
+                                <i className='fa fa-trash' onClick={this.itemDelete.bind(this, element._id)}></i>
                                 {/* <button onClick={this.handleDelete.bind(this, element._id)}>Delete</button> */}
                                 <button className='more-Btn' onClick={this.itemHandler.bind(this, index)}>More</button>
                             </div>
@@ -65,7 +70,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         getAllItems: () => dispatch(actionTypes.wait_All_Items()),
-        openItem: (value) => dispatch(actionTypes.inspect_Item(value))
+        openItem: (value) => dispatch(actionTypes.inspect_Item(value)),
+        delItem: (value) => dispatch(actionTypes.delete_item(value))
     }
 }
 
