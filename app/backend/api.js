@@ -7,13 +7,13 @@ module.exports = function (app, db) {
         });
     })
 
-    // app.post('/createValue', function (req, response) {
-    //     const data = req.body
-    //     db.collection("Board games").insertOne(data, null, function (err, docs) {
-    //         response.status(200);
-    //         response.send(JSON.stringify(docs))
-    //     })
-    // })
+    app.post('/createValue', function (req, response) {
+        const data = req.body
+        db.collection("Board games").insertOne(data, null, function (err, docs) {
+            response.status(200);
+            response.send(JSON.stringify(docs))
+        })
+    })
 
     // app.delete('/deleteValue/:val'), function (req, response) {
     //     let itemId = req.params.val

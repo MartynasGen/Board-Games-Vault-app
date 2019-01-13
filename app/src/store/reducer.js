@@ -3,7 +3,7 @@ import * as actionType from './actions/actionTypes'
 const initialState = {
     items: [],
     tempItem: [],
-    inspectItem: 'viewAll'
+    inspectItem: 'viewAll',
 }
 
 const reducer = (state = initialState, action) => {
@@ -26,6 +26,18 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 inspectItem: action.componentView
             }
+        case actionType.GET_ADD_ITEM:
+            return {
+                ...state,
+                nName: action.name,
+                nCtg: action.ctg,
+                nDtl: action.dtl,
+                nPic: action.pic,
+            }
+        // case action.INSERT_NEW_DATA:
+        //     return {
+
+        //     }
          default:   
     }
     
