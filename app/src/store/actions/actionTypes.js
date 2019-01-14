@@ -3,6 +3,7 @@ export const WAIT_ALL_ITEMS = 'WAIT_ALL_ITEMS';
 export const INSPECT_ITEM = 'INSPECT_ITEM';
 export const ADD_ITEM_VIEW = 'ADD_ITEM_VIEW';
 export const GET_ADD_ITEM = 'GET_ADD_ITEM';
+export const FIND_ITEM = 'FIND_ITEM'
 
 
 export const get_All_Items =(items) =>{
@@ -62,5 +63,22 @@ export const delete_item = (value) => {
         fetch(`http://localhost:2000/deleteValue/${value}`, {
             method: 'DELETE',
         })
+    }
+}
+export const find_item = (value) => {
+    return dispatch => {
+        fetch(`http://localhost:2000/getValue/${value}`)
+            .then((resp) => resp.json())
+            .then((data) => {
+                dispatch(find_item_done(data))
+        })    
+        
+    }
+}
+
+export const find_item_done = (data) => {
+    return {
+        type: FIND_ITEM,
+        items: data,
     }
 }

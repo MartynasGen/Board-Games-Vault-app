@@ -25,6 +25,15 @@ module.exports = function (app, db) {
         })
     })
 
+    app.get('/getValue/:searchValue', function (req, response) {
+        const query = req.params.searchValue
+        db.collection("Board games").find({category: query}).toArray (function (err, docs) {
+            response.status(200);
+            response.send(JSON.stringify(docs))
+        });
+        // {key: /.*chi.*/g}
+    })
+
 
 
 

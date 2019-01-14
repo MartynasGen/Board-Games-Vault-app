@@ -34,6 +34,11 @@ const reducer = (state = initialState, action) => {
                 nDtl: action.dtl,
                 nPic: action.pic,
             }
+        case actionType.FIND_ITEM:
+            return {
+                ...state,
+                items: action.items
+            }
          default:   
     }
     
