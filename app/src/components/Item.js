@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actionTypes from '../store/actions/actionTypes'
 import ItemDetails from './ItemDetails'
 import AddNewItem from './AddNewItem'
+import Edit from './EditItem'
 
 
 class Item extends Component {
@@ -35,6 +36,7 @@ class Item extends Component {
                                 <div className='item-Opacity'></div>
                                 <div className='item'>
                                 <i className='fa fa-trash' onClick={this.itemDelete.bind(this, element._id)}></i>
+                                {/* <i className='fa fa-edit'></i> */}
                                 {/* <button onClick={this.handleDelete.bind(this, element._id)}>Delete</button> */}
                                 <button className='more-Btn' onClick={this.itemHandler.bind(this, index)}>More</button>
                             </div>
@@ -48,6 +50,8 @@ class Item extends Component {
                     return <ItemDetails/>
                 } else if (this.props.inspectItem === 'addItem'){
                     return <AddNewItem/>
+                } else if (this.props.inspectItem === 'editItem'){
+                    return <Edit/>
                 }
 
         return (

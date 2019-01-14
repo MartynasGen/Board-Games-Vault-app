@@ -18,6 +18,7 @@ class ItemDetails extends Component {
                 <div>
                     Details: {this.props.tempItem.details}
                 </div>
+                <i className='fa fa-edit' onClick={this.props.editForm}></i>
                 <button className='drop-Btn' onClick={this.props.getAllItems}>Back</button>
 
             </div>
@@ -37,7 +38,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getAllItems: () => dispatch(actionTypes.wait_All_Items())
+        getAllItems: () => dispatch(actionTypes.wait_All_Items()),
+        editForm: () => dispatch(actionTypes.edit_Item())
     }
 }
 

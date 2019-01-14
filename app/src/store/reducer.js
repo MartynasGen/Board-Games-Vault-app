@@ -44,6 +44,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 items: action.items
             }
+        case actionType.EDIT_ITEM:
+            return {
+                ...state,
+                inspectItem: action.componentView
+            }
          default:   
     }
     

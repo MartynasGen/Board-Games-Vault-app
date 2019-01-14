@@ -43,7 +43,13 @@ module.exports = function (app, db) {
         // {key: /.*chi.*/g}
     })
 
-
+    app.put('/updateValue', function (req, response) {
+        const query  = {key: req.body.key, value: req.body.value}
+        db.collection("test").updateOne(query, {$set: {value: req.body.updateValue}}, null, function (err, docs) {
+            response.status(200);
+            response.send(JSON.stringify(docs))
+        })
+    })
 
 
 
