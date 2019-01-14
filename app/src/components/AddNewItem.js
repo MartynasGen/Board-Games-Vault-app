@@ -7,8 +7,8 @@ class InsertNewItem extends Component {
     state = {
         itm: {
             name: '',
-            ctg: '',
-            dtl: '',
+            category: '',
+            details: '',
             pic: ''
         }
     }
@@ -35,9 +35,9 @@ class InsertNewItem extends Component {
                 <h2>Item name:</h2>
                     <input className='search-Input' placeholder='...add' onChange={this.handleInput.bind(this, this.state.itm, 'name')}></input>
                 <h2>Item category:</h2>
-                    <input className='search-Input' placeholder='...add' onChange={this.handleInput.bind(this, this.state.itm, 'ctg')}></input>
+                    <input className='search-Input' placeholder='...add' onChange={this.handleInput.bind(this, this.state.itm, 'category')}></input>
                 <h2>Item details:</h2>
-                    <input className='search-Input' placeholder='...add' onChange={this.handleInput.bind(this, this.state.itm, 'dtl')}></input>
+                    <input className='search-Input' placeholder='...add' onChange={this.handleInput.bind(this, this.state.itm, 'details')}></input>
                 <h2>Item image:</h2>
                     <input className='search-Input' placeholder='...add' onChange={this.handleInput.bind(this, this.state.itm, 'pic')}></input>
                 <button className='add-Btn' onClick={this.handleSubmit}>Add item</button>

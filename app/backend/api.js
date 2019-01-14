@@ -25,9 +25,18 @@ module.exports = function (app, db) {
         })
     })
 
-    app.get('/getValue/:searchValue', function (req, response) {
-        const query = req.params.searchValue
+    app.get('/getValue/:Value', function (req, response) {
+        const query = req.params.Value
         db.collection("Board games").find({category: query}).toArray (function (err, docs) {
+            response.status(200);
+            response.send(JSON.stringify(docs))
+        });
+        // {key: /.*chi.*/g}
+    })
+
+    app.get('/getSearchValue/:searchValue', function (req, response) {
+        const query = req.params.searchValue
+        db.collection("Board games").find({name: new RegExp(query)}).toArray (function (err, docs) {
             response.status(200);
             response.send(JSON.stringify(docs))
         });

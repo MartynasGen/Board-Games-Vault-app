@@ -29,12 +29,17 @@ const reducer = (state = initialState, action) => {
         case actionType.GET_ADD_ITEM:
             return {
                 ...state,
-                nName: action.name,
-                nCtg: action.ctg,
-                nDtl: action.dtl,
-                nPic: action.pic,
+                name: action.name,
+                category: action.ctg,
+                details: action.dtl,
+                pic: action.pic,
             }
         case actionType.FIND_ITEM:
+            return {
+                ...state,
+                items: action.items
+            }
+        case actionType.SEARCH_ITEM:
             return {
                 ...state,
                 items: action.items

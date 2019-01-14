@@ -12,32 +12,19 @@ class Drop extends Component {
     }
 
     render(){
-
-        let dropItems = null
-
-        // dropItems = this.props.item.map( (element, index) =>{
-        //     return (
-        //         <div key={index} >
-        //             {/* {element.category} */}
-        //         </div>
-        //     )
-        // })
-
-        
-
         return (
             <div className="dropdown-Container">
                 <button className="drop-Btn">Filter</button>
                 <div className="dropdown-Content">
                   {/* {dropItems} */}
+                    <div onClick={this.props.getAllItems}>All</div>
                     <div onClick={this.props.filterDrop.bind(this, this.state.cat1)}>Cards</div>
                     <div onClick={this.props.filterDrop.bind(this, this.state.cat2)}>Economy</div>
                     <div onClick={this.props.filterDrop.bind(this, this.state.cat3)}>Miniatures</div>
                 </div>
               </div>
         )
-    }
-    
+    }  
 }
 
 const mapStateToProps = state => {
@@ -47,7 +34,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        filterDrop: (value) => dispatch(actionTypes.find_item(value))
+        filterDrop: (value) => dispatch(actionTypes.find_item(value)),
+        getAllItems: () => dispatch(actionTypes.wait_All_Items()),
     }
 }
 

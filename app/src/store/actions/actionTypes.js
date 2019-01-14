@@ -3,7 +3,8 @@ export const WAIT_ALL_ITEMS = 'WAIT_ALL_ITEMS';
 export const INSPECT_ITEM = 'INSPECT_ITEM';
 export const ADD_ITEM_VIEW = 'ADD_ITEM_VIEW';
 export const GET_ADD_ITEM = 'GET_ADD_ITEM';
-export const FIND_ITEM = 'FIND_ITEM'
+export const FIND_ITEM = 'FIND_ITEM';
+export const SEARCH_ITEM = 'SEARCH_ITEM'
 
 
 export const get_All_Items =(items) =>{
@@ -40,8 +41,8 @@ export const Get_Add_Item_ = (obj) => {
     return {
         type: GET_ADD_ITEM,
         name: obj.obj.name,
-        ctg: obj.ctg,
-        dtl: obj.dtl,
+        catagory: obj.ctg,
+        details: obj.dtl,
         pic: obj.pic
     }
 }
@@ -79,6 +80,23 @@ export const find_item = (value) => {
 export const find_item_done = (data) => {
     return {
         type: FIND_ITEM,
+        items: data,
+    }
+}
+
+export const get_search_result = (value) => {
+    return dispatch => {
+        fetch(`http://localhost:2000/getSearchValue/${value}`)
+            .then((resp) => resp.json())
+            .then((data) => {
+                dispatch(search_item_done(data))
+        })    
+    }
+}
+
+export const search_item_done = (data) => {
+    return {
+        type: SEARCH_ITEM,
         items: data,
     }
 }
